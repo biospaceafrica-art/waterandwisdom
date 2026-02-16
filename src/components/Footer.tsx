@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { NewsletterForm } from "./NewsletterForm";
 
 export function Footer() {
   return (
@@ -69,19 +70,7 @@ export function Footer() {
             <p className="text-sm opacity-70 mb-4">
               Subscribe for impact stories and programme updates.
             </p>
-            <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 px-3 py-2 rounded-md bg-primary-foreground/10 border border-primary-foreground/20 text-sm text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:ring-1 focus:ring-secondary"
-              />
-              <button
-                type="submit"
-                className="px-4 py-2 rounded-md bg-secondary text-secondary-foreground font-heading text-sm font-semibold hover:bg-secondary/90 transition-colors"
-              >
-                Join
-              </button>
-            </form>
+            <NewsletterForm variant="footer" />
           </div>
         </div>
 

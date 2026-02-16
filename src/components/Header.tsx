@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Impact", to: "/impact" },
   { label: "Why Fund Us", to: "/why-fund-us" },
   { label: "Contact", to: "/contact" },
+  { label: "Donor Portal", to: "/auth" },
 ];
 
 export function Header() {

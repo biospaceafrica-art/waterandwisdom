@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { BookOpen } from "lucide-react";
 import { StoryFilters } from "@/components/StoryFilters";
+import { TranslateButton } from "@/components/TranslateButton";
 
 interface Story {
   id: string;
@@ -25,6 +26,7 @@ const Stories = () => {
   const { t } = useTranslation();
   const [stories, setStories] = useState<Story[]>([]);
   const [selected, setSelected] = useState<Story | null>(null);
+  const [translatedContent, setTranslatedContent] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedSdg, setSelectedSdg] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
@@ -62,6 +64,11 @@ const Stories = () => {
       return true;
     });
   }, [stories, selectedSdg, selectedLocation]);
+
+  const openStory = (story: Story) => {
+    setSelected(story);
+    setTranslatedContent(null);
+  };
 
   return (
     <Layout>
@@ -108,7 +115,7 @@ const Stories = () => {
                       <div
                         key={story.id}
                         className="bg-card border border-border rounded-2xl overflow-hidden cursor-pointer hover:shadow-teal transition-shadow"
-                        onClick={() => setSelected(story)}
+                        onClick={() => openStory(story)}
                       >
                         <div className="grid md:grid-cols-2">
                           <div className="aspect-video md:aspect-auto bg-muted flex items-center justify-center">
@@ -164,7 +171,7 @@ const Stories = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1 + i * 0.05 }}
                       className="bg-card border border-border rounded-2xl overflow-hidden cursor-pointer hover:shadow-teal transition-shadow"
-                      onClick={() => setSelected(story)}
+                      onClick={() => openStory(story)}
                     >
                       <div className="aspect-video bg-muted flex items-center justify-center">
                         {story.image_url ? (
@@ -205,15 +212,21 @@ const Stories = () => {
             className="bg-card border border-border rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-[10px] bg-secondary/10 text-secondary px-2 py-1 rounded font-heading font-semibold uppercase tracking-wider">
-                {selected.category}
-              </span>
-              {selected.sdg_tags?.map((tag) => (
-                <span key={tag} className="text-[10px] bg-muted text-muted-foreground px-1.5 py-0.5 rounded font-heading font-semibold">
-                  {tag}
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] bg-secondary/10 text-secondary px-2 py-1 rounded font-heading font-semibold uppercase tracking-wider">
+                  {selected.category}
                 </span>
-              ))}
+                {selected.sdg_tags?.map((tag) => (
+                  <span key={tag} className="text-[10px] bg-muted text-muted-foreground px-1.5 py-0.5 rounded font-heading font-semibold">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <TranslateButton
+                text={selected.content}
+                onTranslated={setTranslatedContent}
+              />
             </div>
             <h2 className="font-heading font-extrabold text-2xl text-foreground mb-2">{selected.title}</h2>
             <div className="flex items-center gap-4 text-xs text-muted-foreground mb-6">
@@ -224,7 +237,7 @@ const Stories = () => {
               )}
             </div>
             <div className="prose prose-sm max-w-none text-foreground leading-relaxed whitespace-pre-line">
-              {selected.content}
+              {translatedContent || selected.content}
             </div>
             <button
               onClick={() => setSelected(null)}

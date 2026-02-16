@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { LogOut, FileText, Target, DollarSign, TrendingUp } from "lucide-react";
 import type { User } from "@supabase/supabase-js";
+import { RegionHeatmap } from "@/components/RegionHeatmap";
+import { SdgExportButton } from "@/components/SdgExportButton";
 
 interface DonationRow {
   id: string;
@@ -171,6 +173,9 @@ const Portal = () => {
                   <MetricCard label="Donor Satisfaction" value="4.8/5" sublabel="Based on partner feedback" />
                 </div>
               </div>
+
+              {/* Region Heatmap */}
+              <RegionHeatmap />
             </motion.div>
           )}
 
@@ -223,7 +228,10 @@ const Portal = () => {
           {activeTab === "sdg" && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
               <div className="bg-card border border-border rounded-2xl p-6">
-                <h3 className="font-heading font-bold text-lg text-foreground mb-2">SDG Alignment Report</h3>
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-heading font-bold text-lg text-foreground">SDG Alignment Report</h3>
+                  {sdgReports.length > 0 && <SdgExportButton reports={sdgReports} />}
+                </div>
                 <p className="text-sm text-muted-foreground mb-6">
                   Track how your contributions align with UN Sustainable Development Goals
                 </p>

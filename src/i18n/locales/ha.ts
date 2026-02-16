@@ -29,6 +29,11 @@ const ha = {
   stories_subtitle: "Labaran gaske daga al'ummomin da muke yi wa hidima.",
   stories_read_more: "Karanta Cikakken Labari",
   stories_featured: "Fitaccen",
+  stories_filter_sdg: "Manufar SDG",
+  stories_filter_region: "Yanki",
+  stories_filter_all_sdgs: "Duk SDGs",
+  stories_filter_all_regions: "Duk Yankuna",
+  stories_filter_clear: "Share Tacewa",
 
   cta_title: "Ku haɗa kai da mu wajen gina makomar da kowane yaro zai iya koyo, jagoranta, kuma ya rayu lafiya.",
   cta_explore: "Duba Tasirinmu",

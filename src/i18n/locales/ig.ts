@@ -29,6 +29,11 @@ const ig = {
   stories_subtitle: "Akụkọ n'ezie si n'obodo anyị na-ejere ozi — na-egosi ike nke mmiri dị ọcha, agụmakwụkwọ, na nduzi.",
   stories_read_more: "Gụọ Akụkọ Zuru Oke",
   stories_featured: "A Họpụtara",
+  stories_filter_sdg: "Ebumnuche SDG",
+  stories_filter_region: "Mpaghara",
+  stories_filter_all_sdgs: "SDG Niile",
+  stories_filter_all_regions: "Mpaghara Niile",
+  stories_filter_clear: "Hichapụ Nzacha",
 
   cta_title: "Jikọọ anyị n'iwu ọdịnihu ebe nwa ọ bụla nwere ike ịmụta, iduru, ma dịkwa ndụ nke ọma.",
   cta_explore: "Lelee Mmetụta Anyị",

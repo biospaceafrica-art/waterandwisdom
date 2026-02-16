@@ -29,6 +29,11 @@ const pcm = {
   stories_subtitle: "Real stories from di communities wey we dey serve — showing di power of clean water, education, and good leadership.",
   stories_read_more: "Read Full Story",
   stories_featured: "Featured",
+  stories_filter_sdg: "SDG Goal",
+  stories_filter_region: "Area",
+  stories_filter_all_sdgs: "All SDGs",
+  stories_filter_all_regions: "All Areas",
+  stories_filter_clear: "Clear Filter",
 
   cta_title: "Come join us build future where every pikin fit learn, lead, and live well.",
   cta_explore: "See Our Impact",

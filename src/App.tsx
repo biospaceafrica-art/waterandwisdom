@@ -9,6 +9,8 @@ import Programmes from "./pages/Programmes";
 import Impact from "./pages/Impact";
 import WhyFundUs from "./pages/WhyFundUs";
 import Contact from "./pages/Contact";
+import Stories from "./pages/Stories";
+import Donate from "./pages/Donate";
 import Auth from "./pages/Auth";
 import Portal from "./pages/Portal";
 import NotFound from "./pages/NotFound";
@@ -28,6 +30,8 @@ const App = () => (
           <Route path="/impact" element={<Impact />} />
           <Route path="/why-fund-us" element={<WhyFundUs />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/stories" element={<Stories />} />
+          <Route path="/donate" element={<Donate />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/portal" element={<Portal />} />
           <Route path="*" element={<NotFound />} />

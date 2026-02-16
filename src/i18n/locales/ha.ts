@@ -1,0 +1,66 @@
+const ha = {
+  nav_home: "Gida",
+  nav_about: "Game Da Mu",
+  nav_programmes: "Shirye-shirye",
+  nav_impact: "Tasiri",
+  nav_stories: "Labarai",
+  nav_why_fund: "Me Ya Sa",
+  nav_contact: "Tuntube Mu",
+  nav_donate: "Ba Da Gudummawa",
+  nav_portal: "Shafin Masu Tallafi",
+  nav_partner: "Yi Abokin Hulda",
+
+  hero_title: "Inda Ruwan Tsafta Ya Hadu Da Ilimi.",
+  hero_subtitle: "Muna Canza Rayuwa Ta Hanyar Ruwa, Ilimi, Da Jagoranci Mai Inganci.",
+  hero_cta_partner: "Yi Abokin Hulda",
+  hero_cta_donate: "Tallafa Mana",
+
+  pillars_title: "Ruwan Tsafta. Ingantaccen Ilimi. Ƙimomi Masu Ƙarfi.",
+  pillars_desc: "A Nijeriya, waɗannan su ne tushen mutuncin ɗan adam. Muna bayar da su tare.",
+  pillar_water: "Ruwan Tsafta",
+  pillar_education: "Ingantaccen Ilimi",
+  pillar_values: "Ƙimomi Masu Ƙarfi",
+
+  stats_schools: "Makarantu",
+  stats_students: "Ɗalibai",
+  stats_invested: "An Kashe",
+
+  stories_title: "Labaran Tasiri",
+  stories_subtitle: "Labaran gaske daga al'ummomin da muke yi wa hidima.",
+  stories_read_more: "Karanta Cikakken Labari",
+  stories_featured: "Fitaccen",
+
+  cta_title: "Ku haɗa kai da mu wajen gina makomar da kowane yaro zai iya koyo, jagoranta, kuma ya rayu lafiya.",
+  cta_explore: "Duba Tasirinmu",
+
+  donate_title: "Tallafa Mana",
+  donate_subtitle: "Kowane gudummawa tana kawo ruwan tsafta, ingantaccen ilimi, da ƙimomi masu ƙarfi.",
+  donate_one_time: "Sau Ɗaya",
+  donate_monthly: "Kowane Wata",
+  donate_amount: "Zaɓi Adadi",
+  donate_custom: "Adadin Da Kuke So",
+  donate_purpose: "Manufa",
+  donate_purpose_general: "Inda Ake Buƙata",
+  donate_purpose_water: "Ayyukan Ruwan Tsafta",
+  donate_purpose_education: "Tallafin Ilimi",
+  donate_purpose_leadership: "Shirin Jagoranci",
+  donate_proceed: "Ci Gaba Da Biyan Kuɗi",
+  donate_monthly_note: "Bayar da gudummawa kowane wata yana taimaka mana tsara ayyuka na dogon lokaci.",
+  donate_impact_title: "Tasirinku",
+
+  footer_tagline: "Inda ruwan tsafta ya haɗu da ilimi. Canza rayuwa ta shirye-shirye masu tushe a al'umma a Nijeriya.",
+  footer_links: "Hanyoyin Wucewa",
+  footer_contact: "Tuntube Mu",
+  footer_newsletter: "Ku Kasance Cikin Sabon Bayani",
+  footer_newsletter_desc: "Ku yi rajista don samun labaran tasiri da sabuntawar shirye-shirye.",
+  footer_rights: "An kiyaye duk haƙƙoƙi.",
+
+  contact_title: "Tuntube Mu",
+  contact_subtitle: "Ko kuna son yin abokin hulda, ba da gudummawa, aikin sa kai, ko kawai koyo ƙari — muna son jin daga gare ku.",
+  contact_responsiveness: "Yadda Muke Amsa",
+  contact_avg_response: "Matsakaicin Amsa",
+  contact_resolution: "Warware Na Mako",
+  contact_satisfaction: "Gamsuwa",
+};
+
+export default ha;

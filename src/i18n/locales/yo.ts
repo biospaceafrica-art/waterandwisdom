@@ -1,0 +1,66 @@
+const yo = {
+  nav_home: "Ilé",
+  nav_about: "Nípa Wa",
+  nav_programmes: "Àwọn Ètò",
+  nav_impact: "Ipa",
+  nav_stories: "Ìtàn",
+  nav_why_fund: "Kí Nìdí",
+  nav_contact: "Kàn Sí Wa",
+  nav_donate: "Ṣe Ìrànwọ́",
+  nav_portal: "Ojú-Ewé Olùfúnni",
+  nav_partner: "Di Alábàáṣiṣẹ́pọ̀",
+
+  hero_title: "Níbi Tí Omi Mímọ́ Bá Ẹ̀kọ́ Pàdé.",
+  hero_subtitle: "A Ń Yí Ìgbésí Ayé Padà Nípasẹ̀ Omi, Ẹ̀kọ́, Àti Àṣàjú Tó Dára.",
+  hero_cta_partner: "Di Alábàáṣiṣẹ́pọ̀",
+  hero_cta_donate: "Ṣe Àtìlẹ́yìn Fún Iṣẹ́ Wa",
+
+  pillars_title: "Omi Mímọ́. Ẹ̀kọ́ Tó Dára. Ìwà Rere.",
+  pillars_desc: "Ní Nàìjíríà, àwọn wọ̀nyí ni ìpìlẹ̀ ọlá ẹ̀dá ènìyàn. A máa ń pèsè wọ́n papọ̀.",
+  pillar_water: "Omi Mímọ́",
+  pillar_education: "Ẹ̀kọ́ Tó Dára",
+  pillar_values: "Ìwà Rere",
+
+  stats_schools: "Ilé-Ìwé",
+  stats_students: "Akẹ́kọ̀ọ́",
+  stats_invested: "A Ti Ná",
+
+  stories_title: "Ìtàn Ipa Wa",
+  stories_subtitle: "Ìtàn gidi láti àwùjọ tí a ń sìn — tí ń fi agbára omi mímọ́, ẹ̀kọ́, àti àṣàjú hàn.",
+  stories_read_more: "Ka Ìtàn Ní Kíkún",
+  stories_featured: "Àkànṣe",
+
+  cta_title: "Dara pọ̀ mọ́ wa láti kọ́ ọjọ́ ọ̀la tí gbogbo ọmọ lè kọ́, lè darí, tí ó sì lè gbé dáadáa.",
+  cta_explore: "Wo Ipa Wa",
+
+  donate_title: "Ṣe Àtìlẹ́yìn",
+  donate_subtitle: "Gbogbo ìrànwọ́ ń mú omi mímọ́, ẹ̀kọ́ tó dára, àti ìwà rere wá sí àwùjọ Nàìjíríà.",
+  donate_one_time: "Ẹ̀ẹ̀kan",
+  donate_monthly: "Oṣooṣù",
+  donate_amount: "Yan Iye Owó",
+  donate_custom: "Iye Owó Tó Fẹ́",
+  donate_purpose: "Ète",
+  donate_purpose_general: "Ibití A Nílò Jùlọ",
+  donate_purpose_water: "Iṣẹ́ Omi Mímọ́",
+  donate_purpose_education: "Àtìlẹ́yìn Ẹ̀kọ́",
+  donate_purpose_leadership: "Ètò Àṣàjú",
+  donate_proceed: "Tẹ̀síwájú Sí Ìsanwó",
+  donate_monthly_note: "Fífúnni lóṣooṣù ń ràn wá lọ́wọ́ láti ṣètò iṣẹ́ ìgbà pípẹ́.",
+  donate_impact_title: "Ipa Rẹ",
+
+  footer_tagline: "Níbi tí omi mímọ́ bá ẹ̀kọ́ pàdé. A ń yí ìgbésí ayé padà nípasẹ̀ àwọn ètò tó dá lórí àwùjọ ní Nàìjíríà.",
+  footer_links: "Àwọn Ìjápọ̀",
+  footer_contact: "Kàn Sí Wa",
+  footer_newsletter: "Máa Gbọ́ Ìròyìn",
+  footer_newsletter_desc: "Forúkọ sílẹ̀ fún ìtàn ipa àti àwọn ìmúdójúìwọ̀n ètò.",
+  footer_rights: "Gbogbo ẹ̀tọ́ ni a pamọ́.",
+
+  contact_title: "Kàn Sí Wa",
+  contact_subtitle: "Bóyá o fẹ́ di alábàáṣiṣẹ́pọ̀, fúnni, ṣe iṣẹ́ àtinúwá, tàbí o kàn fẹ́ mọ̀ síi — a fẹ́ gbọ́ lọ́wọ́ rẹ.",
+  contact_responsiveness: "Bí A Ṣe Ń Dáhùn",
+  contact_avg_response: "Àárín Ìdáhùn",
+  contact_resolution: "Ìyanjú Ọ̀ṣẹ̀",
+  contact_satisfaction: "Ìtẹ́lọ́rùn",
+};
+
+export default yo;

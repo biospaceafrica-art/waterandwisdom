@@ -1,0 +1,66 @@
+const fr = {
+  nav_home: "Accueil",
+  nav_about: "À Propos",
+  nav_programmes: "Programmes",
+  nav_impact: "Impact",
+  nav_stories: "Histoires",
+  nav_why_fund: "Pourquoi Nous",
+  nav_contact: "Contact",
+  nav_donate: "Donner",
+  nav_portal: "Portail Donateurs",
+  nav_partner: "Devenir Partenaire",
+
+  hero_title: "Là Où l'Eau Potable Rencontre l'Éducation.",
+  hero_subtitle: "Transformer des vies grâce à l'eau, l'éducation et un leadership fondé sur les valeurs.",
+  hero_cta_partner: "Devenir Partenaire",
+  hero_cta_donate: "Soutenir Notre Travail",
+
+  pillars_title: "Eau Potable. Éducation de Qualité. Valeurs Fortes.",
+  pillars_desc: "Au Nigéria, ce sont les fondements de la dignité humaine. Nous les offrons ensemble.",
+  pillar_water: "Eau Potable",
+  pillar_education: "Éducation de Qualité",
+  pillar_values: "Valeurs Fortes",
+
+  stats_schools: "Écoles",
+  stats_students: "Élèves",
+  stats_invested: "Investis",
+
+  stories_title: "Histoires d'Impact",
+  stories_subtitle: "Des histoires vraies des communautés que nous servons — démontrant le pouvoir de l'eau potable, l'éducation et le leadership.",
+  stories_read_more: "Lire l'Histoire Complète",
+  stories_featured: "En Vedette",
+
+  cta_title: "Rejoignez-nous pour construire un avenir où chaque enfant peut apprendre, diriger et bien vivre.",
+  cta_explore: "Explorer Notre Impact",
+
+  donate_title: "Soutenir Notre Travail",
+  donate_subtitle: "Chaque contribution apporte de l'eau potable, une éducation de qualité et des valeurs fortes aux communautés nigérianes.",
+  donate_one_time: "Ponctuel",
+  donate_monthly: "Mensuel",
+  donate_amount: "Choisir le Montant",
+  donate_custom: "Montant Personnalisé",
+  donate_purpose: "Destination",
+  donate_purpose_general: "Là Où C'est Le Plus Nécessaire",
+  donate_purpose_water: "Projets d'Eau Potable",
+  donate_purpose_education: "Soutien à l'Éducation",
+  donate_purpose_leadership: "Programme de Leadership",
+  donate_proceed: "Procéder au Paiement",
+  donate_monthly_note: "Les dons mensuels nous aident à planifier des projets à long terme de manière durable.",
+  donate_impact_title: "Votre Impact",
+
+  footer_tagline: "Là où l'eau potable rencontre l'éducation. Transformer des vies grâce à des programmes centrés sur la communauté au Nigéria.",
+  footer_links: "Liens Rapides",
+  footer_contact: "Contact",
+  footer_newsletter: "Restez Informé",
+  footer_newsletter_desc: "Abonnez-vous pour recevoir des histoires d'impact et des mises à jour.",
+  footer_rights: "Tous droits réservés.",
+
+  contact_title: "Contactez-Nous",
+  contact_subtitle: "Que vous souhaitiez devenir partenaire, donner, faire du bénévolat ou simplement en savoir plus — nous serions ravis de vous entendre.",
+  contact_responsiveness: "Notre Réactivité",
+  contact_avg_response: "Temps de Réponse",
+  contact_resolution: "Résolution Hebdo.",
+  contact_satisfaction: "Satisfaction",
+};
+
+export default fr;

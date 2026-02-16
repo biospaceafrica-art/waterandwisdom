@@ -1,0 +1,66 @@
+const ig = {
+  nav_home: "Ụlọ",
+  nav_about: "Maka Anyị",
+  nav_programmes: "Mmemme",
+  nav_impact: "Mmetụta",
+  nav_stories: "Akụkọ",
+  nav_why_fund: "Gịnị Kpatara",
+  nav_contact: "Kpọtụrụ Anyị",
+  nav_donate: "Nye Ego",
+  nav_portal: "Portal Ndị Nyere Ego",
+  nav_partner: "Soro Anyị",
+
+  hero_title: "Ebe Mmiri Dị Ọcha Zutere Agụmakwụkwọ.",
+  hero_subtitle: "Anyị Na-Agbanwe Ndụ Site na Mmiri, Agụmakwụkwọ, na Nduzi Nke Ezi Ụkpụrụ.",
+  hero_cta_partner: "Soro Anyị",
+  hero_cta_donate: "Kwado Ọrụ Anyị",
+
+  pillars_title: "Mmiri Dị Ọcha. Ezigbo Agụmakwụkwọ. Ụkpụrụ Siri Ike.",
+  pillars_desc: "Na Naịjirịa, ndị a bụ ntọala nsọpụrụ mmadụ. Anyị na-enye ha ọnụ.",
+  pillar_water: "Mmiri Dị Ọcha",
+  pillar_education: "Ezigbo Agụmakwụkwọ",
+  pillar_values: "Ụkpụrụ Siri Ike",
+
+  stats_schools: "Ụlọ Akwụkwọ",
+  stats_students: "Ụmụ Akwụkwọ",
+  stats_invested: "Etinyere",
+
+  stories_title: "Akụkọ Mmetụta",
+  stories_subtitle: "Akụkọ n'ezie si n'obodo anyị na-ejere ozi — na-egosi ike nke mmiri dị ọcha, agụmakwụkwọ, na nduzi.",
+  stories_read_more: "Gụọ Akụkọ Zuru Oke",
+  stories_featured: "A Họpụtara",
+
+  cta_title: "Jikọọ anyị n'iwu ọdịnihu ebe nwa ọ bụla nwere ike ịmụta, iduru, ma dịkwa ndụ nke ọma.",
+  cta_explore: "Lelee Mmetụta Anyị",
+
+  donate_title: "Kwado Ọrụ Anyị",
+  donate_subtitle: "Onyinye ọ bụla na-eweta mmiri dị ọcha, ezigbo agụmakwụkwọ, na ụkpụrụ siri ike.",
+  donate_one_time: "Otu Oge",
+  donate_monthly: "Kwa Ọnwa",
+  donate_amount: "Họrọ Ego",
+  donate_custom: "Ego Nke Gị",
+  donate_purpose: "Ebumnuche",
+  donate_purpose_general: "Ebe A Chọrọ Karịa",
+  donate_purpose_water: "Ọrụ Mmiri Dị Ọcha",
+  donate_purpose_education: "Nkwado Agụmakwụkwọ",
+  donate_purpose_leadership: "Mmemme Nduzi",
+  donate_proceed: "Gaa N'ihu Ịkwụ Ụgwọ",
+  donate_monthly_note: "Inye kwa ọnwa na-enyere anyị aka ịkwado ọrụ ogologo oge.",
+  donate_impact_title: "Mmetụta Gị",
+
+  footer_tagline: "Ebe mmiri dị ọcha zutere agụmakwụkwọ. Anyị na-agbanwe ndụ site na mmemme ndị dabere n'obodo na Naịjirịa.",
+  footer_links: "Njikọ Ngwa Ngwa",
+  footer_contact: "Kpọtụrụ Anyị",
+  footer_newsletter: "Nọrọ Na-Enweta Ozi",
+  footer_newsletter_desc: "Debanye aha maka akụkọ mmetụta na mmelite mmemme.",
+  footer_rights: "Ikike niile echekwara.",
+
+  contact_title: "Kpọtụrụ Anyị",
+  contact_subtitle: "Ma ọ bụ na ị chọrọ iso anyị, nye ego, rụọ ọrụ afọ ofufe, ma ọ bụ naanị ịmụtakwu — anyị ga-achọ ịnụ n'aka gị.",
+  contact_responsiveness: "Otu Anyị Si Aza",
+  contact_avg_response: "Oge Nzaghachi",
+  contact_resolution: "Ndozi Kwa Izu",
+  contact_satisfaction: "Afọ Ojuju",
+};
+
+export default ig;

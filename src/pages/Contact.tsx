@@ -38,7 +38,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-heading font-semibold text-sm text-foreground">Email</p>
-                    <p className="text-sm text-muted-foreground">info@waterandwisdom.org</p>
+                    <a href="mailto:waterandwisdomfoundation@gmail.com" className="text-sm text-muted-foreground hover:text-secondary transition-colors">waterandwisdomfoundation@gmail.com</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -47,7 +47,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-heading font-semibold text-sm text-foreground">Phone</p>
-                    <p className="text-sm text-muted-foreground">+234 (0) 800 WWF NGO</p>
+                    <a href="https://wa.me/2348069387354" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-secondary transition-colors">+234 806 938 7354 (WhatsApp)</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -55,8 +55,8 @@ const Contact = () => {
                     <MapPin className="text-secondary" size={20} />
                   </div>
                   <div>
-                    <p className="font-heading font-semibold text-sm text-foreground">Address</p>
-                    <p className="text-sm text-muted-foreground">Calabar, Cross River State, Nigeria</p>
+                    <p className="font-heading font-semibold text-sm text-foreground">Social Media</p>
+                    <a href="https://instagram.com/thewaterandwisdomfoundation" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-secondary transition-colors">@thewaterandwisdomfoundation</a>
                   </div>
                 </div>
               </div>

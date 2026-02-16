@@ -48,18 +48,18 @@ export function Footer() {
           <div>
             <h4 className="font-heading font-semibold text-sm mb-4 uppercase tracking-wider">Contact</h4>
             <div className="flex flex-col gap-3">
-              <div className="flex items-start gap-2 text-sm opacity-80">
+              <a href="mailto:waterandwisdomfoundation@gmail.com" className="flex items-start gap-2 text-sm opacity-80 hover:opacity-100 transition-opacity">
                 <Mail size={16} className="mt-0.5 shrink-0" />
-                <span>info@waterandwisdom.org</span>
-              </div>
-              <div className="flex items-start gap-2 text-sm opacity-80">
+                <span>waterandwisdomfoundation@gmail.com</span>
+              </a>
+              <a href="https://wa.me/2348069387354" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm opacity-80 hover:opacity-100 transition-opacity">
                 <Phone size={16} className="mt-0.5 shrink-0" />
-                <span>+234 (0) 800 WWF NGO</span>
-              </div>
-              <div className="flex items-start gap-2 text-sm opacity-80">
+                <span>+234 806 938 7354 (WhatsApp)</span>
+              </a>
+              <a href="https://instagram.com/thewaterandwisdomfoundation" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm opacity-80 hover:opacity-100 transition-opacity">
                 <MapPin size={16} className="mt-0.5 shrink-0" />
-                <span>Calabar, Cross River State, Nigeria</span>
-              </div>
+                <span>@thewaterandwisdomfoundation</span>
+              </a>
             </div>
           </div>
 

@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { PillarsSection } from "@/components/PillarsSection";
 import { StatsSection } from "@/components/StatsSection";
 import { StoryTeaser } from "@/components/StoryTeaser";
+import { VolunteerCarousel } from "@/components/VolunteerCarousel";
 import { FinalCTA } from "@/components/FinalCTA";
 
 const Index = () => {
@@ -12,6 +13,7 @@ const Index = () => {
       <PillarsSection />
       <StatsSection />
       <StoryTeaser />
+      <VolunteerCarousel />
       <FinalCTA />
     </Layout>
   );

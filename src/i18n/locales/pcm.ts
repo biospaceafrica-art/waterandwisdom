@@ -1,0 +1,66 @@
+const pcm = {
+  nav_home: "Home",
+  nav_about: "About Us",
+  nav_programmes: "Programmes",
+  nav_impact: "Impact",
+  nav_stories: "Stories",
+  nav_why_fund: "Why Fund Us",
+  nav_contact: "Contact",
+  nav_donate: "Donate",
+  nav_portal: "Donor Portal",
+  nav_partner: "Partner With Us",
+
+  hero_title: "Where Clean Water Meet Education.",
+  hero_subtitle: "We Dey Transform Life Through Water, Education, and Good Leadership.",
+  hero_cta_partner: "Partner With Us",
+  hero_cta_donate: "Support Our Work",
+
+  pillars_title: "Clean Water. Beta Education. Strong Values.",
+  pillars_desc: "For Nigeria, na these things be the foundation of human dignity. We dey deliver all of them together.",
+  pillar_water: "Clean Water",
+  pillar_education: "Beta Education",
+  pillar_values: "Strong Values",
+
+  stats_schools: "Schools",
+  stats_students: "Students",
+  stats_invested: "Wey We Invest",
+
+  stories_title: "Stories of How We Change Life",
+  stories_subtitle: "Real stories from di communities wey we dey serve — showing di power of clean water, education, and good leadership.",
+  stories_read_more: "Read Full Story",
+  stories_featured: "Featured",
+
+  cta_title: "Come join us build future where every pikin fit learn, lead, and live well.",
+  cta_explore: "See Our Impact",
+
+  donate_title: "Support Our Work",
+  donate_subtitle: "Every money wey you give dey bring clean water, beta education, and strong values to Nigerian communities.",
+  donate_one_time: "One Time",
+  donate_monthly: "Every Month",
+  donate_amount: "Choose Amount",
+  donate_custom: "Custom Amount",
+  donate_purpose: "Wetin E Go Do",
+  donate_purpose_general: "Where E Dey Need Am Most",
+  donate_purpose_water: "Clean Water Projects",
+  donate_purpose_education: "Education Support",
+  donate_purpose_leadership: "Leadership Programme",
+  donate_proceed: "Go Pay",
+  donate_monthly_note: "Monthly giving dey help us plan long-term projects well well.",
+  donate_impact_title: "Your Impact",
+
+  footer_tagline: "Where clean water meet education. We dey transform life through programmes wey dey community-centred for Nigeria.",
+  footer_links: "Quick Links",
+  footer_contact: "Contact",
+  footer_newsletter: "Stay Updated",
+  footer_newsletter_desc: "Subscribe make you dey get impact stories and programme updates.",
+  footer_rights: "All rights reserved.",
+
+  contact_title: "Talk to Us",
+  contact_subtitle: "Whether you wan partner, donate, volunteer, or just learn more — we go like hear from you.",
+  contact_responsiveness: "How We Dey Respond",
+  contact_avg_response: "Avg. Response",
+  contact_resolution: "Weekly Resolution",
+  contact_satisfaction: "Satisfaction",
+};
+
+export default pcm;

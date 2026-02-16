@@ -29,6 +29,11 @@ const fr = {
   stories_subtitle: "Des histoires vraies des communautés que nous servons — démontrant le pouvoir de l'eau potable, l'éducation et le leadership.",
   stories_read_more: "Lire l'Histoire Complète",
   stories_featured: "En Vedette",
+  stories_filter_sdg: "Objectif ODD",
+  stories_filter_region: "Région",
+  stories_filter_all_sdgs: "Tous les ODD",
+  stories_filter_all_regions: "Toutes les Régions",
+  stories_filter_clear: "Effacer les Filtres",
 
   cta_title: "Rejoignez-nous pour construire un avenir où chaque enfant peut apprendre, diriger et bien vivre.",
   cta_explore: "Explorer Notre Impact",

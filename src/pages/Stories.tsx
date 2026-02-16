@@ -1,9 +1,10 @@
 import { Layout } from "@/components/Layout";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { BookOpen } from "lucide-react";
+import { StoryFilters } from "@/components/StoryFilters";
 
 interface Story {
   id: string;
@@ -25,6 +26,8 @@ const Stories = () => {
   const [stories, setStories] = useState<Story[]>([]);
   const [selected, setSelected] = useState<Story | null>(null);
   const [loading, setLoading] = useState(true);
+  const [selectedSdg, setSelectedSdg] = useState("");
+  const [selectedLocation, setSelectedLocation] = useState("");
 
   useEffect(() => {
     const fetch = async () => {
@@ -39,6 +42,26 @@ const Stories = () => {
     };
     fetch();
   }, []);
+
+  const allSdgTags = useMemo(() => {
+    const tags = new Set<string>();
+    stories.forEach((s) => s.sdg_tags?.forEach((t) => tags.add(t)));
+    return Array.from(tags).sort();
+  }, [stories]);
+
+  const allLocations = useMemo(() => {
+    const locs = new Set<string>();
+    stories.forEach((s) => { if (s.location) locs.add(s.location); });
+    return Array.from(locs).sort();
+  }, [stories]);
+
+  const filtered = useMemo(() => {
+    return stories.filter((s) => {
+      if (selectedSdg && !(s.sdg_tags || []).includes(selectedSdg)) return false;
+      if (selectedLocation && s.location !== selectedLocation) return false;
+      return true;
+    });
+  }, [stories, selectedSdg, selectedLocation]);
 
   return (
     <Layout>
@@ -61,15 +84,24 @@ const Stories = () => {
             <div className="text-center text-muted-foreground py-12">Loading stories…</div>
           ) : (
             <>
+              <StoryFilters
+                sdgTags={allSdgTags}
+                locations={allLocations}
+                selectedSdg={selectedSdg}
+                selectedLocation={selectedLocation}
+                onSdgChange={setSelectedSdg}
+                onLocationChange={setSelectedLocation}
+              />
+
               {/* Featured story */}
-              {stories.filter((s) => s.featured).length > 0 && (
+              {filtered.filter((s) => s.featured).length > 0 && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
                   className="mb-12"
                 >
-                  {stories
+                  {filtered
                     .filter((s) => s.featured)
                     .slice(0, 1)
                     .map((story) => (
@@ -123,8 +155,8 @@ const Stories = () => {
 
               {/* Stories grid */}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {stories
-                  .filter((s) => !s.featured || stories.filter((x) => x.featured).indexOf(s) > 0)
+                {filtered
+                  .filter((s) => !s.featured || filtered.filter((x) => x.featured).indexOf(s) > 0)
                   .map((story, i) => (
                     <motion.div
                       key={story.id}

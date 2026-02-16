@@ -34,6 +34,11 @@ const en = {
   stories_subtitle: "Real stories from the communities we serve — demonstrating the power of clean water, education, and values-driven leadership.",
   stories_read_more: "Read Full Story",
   stories_featured: "Featured",
+  stories_filter_sdg: "SDG Goal",
+  stories_filter_region: "Region",
+  stories_filter_all_sdgs: "All SDGs",
+  stories_filter_all_regions: "All Regions",
+  stories_filter_clear: "Clear Filters",
 
   // CTA
   cta_title: "Join us in building a future where every child can learn, lead, and live well.",

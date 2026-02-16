@@ -29,6 +29,11 @@ const yo = {
   stories_subtitle: "Ìtàn gidi láti àwùjọ tí a ń sìn — tí ń fi agbára omi mímọ́, ẹ̀kọ́, àti àṣàjú hàn.",
   stories_read_more: "Ka Ìtàn Ní Kíkún",
   stories_featured: "Àkànṣe",
+  stories_filter_sdg: "Ète SDG",
+  stories_filter_region: "Àgbègbè",
+  stories_filter_all_sdgs: "Gbogbo SDG",
+  stories_filter_all_regions: "Gbogbo Àgbègbè",
+  stories_filter_clear: "Pa Àyọkà Rẹ́",
 
   cta_title: "Dara pọ̀ mọ́ wa láti kọ́ ọjọ́ ọ̀la tí gbogbo ọmọ lè kọ́, lè darí, tí ó sì lè gbé dáadáa.",
   cta_explore: "Wo Ipa Wa",

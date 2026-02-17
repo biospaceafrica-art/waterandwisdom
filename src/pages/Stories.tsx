@@ -31,6 +31,7 @@ const Stories = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSdg, setSelectedSdg] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
+  const [selectedLanguage, setSelectedLanguage] = useState("");
 
   useEffect(() => {
     const fetch = async () => {
@@ -117,10 +118,13 @@ const Stories = () => {
               <StoryFilters
                 sdgTags={allSdgTags}
                 locations={allLocations}
+                languages={["English", "Yoruba", "Igbo", "Hausa", "Pidgin"]}
                 selectedSdg={selectedSdg}
                 selectedLocation={selectedLocation}
+                selectedLanguage={selectedLanguage}
                 onSdgChange={setSelectedSdg}
                 onLocationChange={setSelectedLocation}
+                onLanguageChange={setSelectedLanguage}
               />
 
               {/* Featured story */}

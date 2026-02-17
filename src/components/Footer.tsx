@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { NewsletterForm } from "./NewsletterForm";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo-official.jpeg";
 
 export function Footer() {
   return (
@@ -11,7 +11,7 @@ export function Footer() {
           {/* Column 1: Logo & Tagline */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="mb-4">
-              <img src={logo} alt="Water and Wisdom Foundation" className="h-14 w-auto brightness-0 invert" />
+              <img src={logo} alt="Water and Wisdom Foundation" className="h-14 w-auto rounded-md" />
             </div>
             <p className="text-sm opacity-80 leading-relaxed max-w-xs">
               Where clean water meets education. Transforming lives through integrated, community-centred programmes across Nigeria.
@@ -49,7 +49,7 @@ export function Footer() {
                 className="flex items-start gap-2 text-sm opacity-80 hover:opacity-100 transition-opacity group"
               >
                 <Mail size={16} className="mt-0.5 shrink-0" />
-                <span className="break-all">waterandwisdom foundation@gmail.com</span>
+                <span className="break-all">waterandwisdomfoundation@gmail.com</span>
               </a>
               <a
                 href="https://wa.me/2348069387354"
@@ -67,7 +67,7 @@ export function Footer() {
                 className="flex items-start gap-2 text-sm opacity-80 hover:opacity-100 transition-opacity"
               >
                 <MapPin size={16} className="mt-0.5 shrink-0" />
-                <span className="break-words">@thewaterandwisdom foundation</span>
+                <span className="break-words">@thewaterandwisdomfoundation</span>
               </a>
             </div>
           </div>

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { DarkModeToggle } from "./DarkModeToggle";
 import { useTranslation } from "react-i18next";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo-official.jpeg";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +28,7 @@ export function Header() {
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center shrink-0">
-          <img src={logo} alt="Water and Wisdom Foundation" className="h-12 w-auto" />
+          <img src={logo} alt="Water and Wisdom Foundation" className="h-12 w-auto rounded-md" />
         </Link>
 
         {/* Desktop Nav */}

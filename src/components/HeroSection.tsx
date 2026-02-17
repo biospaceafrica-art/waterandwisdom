@@ -49,24 +49,38 @@ export function HeroSection() {
               Where Clean Water{" "}
               <span className="text-accent">Meets Education.</span>
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80 font-body mb-10 max-w-xl leading-relaxed">
+            <p className="text-lg md:text-xl text-primary-foreground/80 font-body mb-8 max-w-xl leading-relaxed">
               Transforming lives through water, education, and values-driven leadership across Nigeria.
             </p>
+
+            {/* Live Impact Metrics */}
+            <div className="flex flex-wrap gap-6 mb-10">
+              {[
+                { value: "14+", label: "Schools" },
+                { value: "3,200+", label: "Students" },
+                { value: "5", label: "States" },
+              ].map((stat) => (
+                <div key={stat.label} className="text-left">
+                  <p className="font-heading font-extrabold text-2xl md:text-3xl text-accent">{stat.value}</p>
+                  <p className="text-xs text-primary-foreground/60 font-heading uppercase tracking-wider">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                size="lg"
+                className="bg-wwf-amber hover:bg-wwf-amber/90 text-foreground font-heading font-semibold text-base px-8"
+                asChild
+              >
+                <Link to="/donate">Donate Now</Link>
+              </Button>
               <Button
                 size="lg"
                 className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-heading font-semibold text-base px-8"
                 asChild
               >
                 <Link to="/contact">Partner With Us</Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-heading font-semibold text-base px-8"
-                asChild
-              >
-                <Link to="/contact">Support Our Work</Link>
               </Button>
             </div>
           </motion.div>

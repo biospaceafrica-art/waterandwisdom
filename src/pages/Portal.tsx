@@ -8,6 +8,7 @@ import { LogOut, FileText, Target, DollarSign, TrendingUp } from "lucide-react";
 import type { User } from "@supabase/supabase-js";
 import { RegionHeatmap } from "@/components/RegionHeatmap";
 import { SdgExportButton } from "@/components/SdgExportButton";
+import { PortalTour } from "@/components/PortalTour";
 
 interface DonationRow {
   id: string;
@@ -95,6 +96,7 @@ const Portal = () => {
 
   return (
     <Layout>
+      <PortalTour />
       <section className="py-24">
         <div className="container mx-auto px-4 lg:px-8 max-w-6xl">
           {/* Header */}

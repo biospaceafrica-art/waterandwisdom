@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { DarkModeToggle } from "./DarkModeToggle";
 import { useTranslation } from "react-i18next";
 import logo from "@/assets/logo.jpeg";
 
@@ -47,9 +48,10 @@ export function Header() {
           ))}
         </nav>
 
-        {/* CTA Buttons + Language */}
+        {/* CTA Buttons + Language + Dark Mode */}
         <div className="hidden lg:flex items-center gap-2">
           <LanguageSwitcher />
+          <DarkModeToggle />
           <Button variant="outline" size="sm" asChild>
             <Link to="/contact">{t("nav_partner")}</Link>
           </Button>
@@ -60,6 +62,7 @@ export function Header() {
 
         {/* Mobile Toggle */}
         <div className="flex items-center gap-2 lg:hidden">
+          <DarkModeToggle />
           <LanguageSwitcher />
           <button
             onClick={() => setIsOpen(!isOpen)}

@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
+import logo from "@/assets/logo.jpeg";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,14 +26,8 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 shrink-0">
-          <div className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center">
-            <span className="font-heading font-bold text-secondary-foreground text-sm">W</span>
-          </div>
-          <div className="hidden sm:block">
-            <span className="font-heading font-bold text-sm text-foreground leading-tight block">Water & Wisdom</span>
-            <span className="font-heading text-[10px] text-muted-foreground leading-tight block tracking-wider uppercase">Foundation</span>
-          </div>
+        <Link to="/" className="flex items-center shrink-0">
+          <img src={logo} alt="Water and Wisdom Foundation" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop Nav */}

@@ -1,6 +1,7 @@
 import { Layout } from "@/components/Layout";
 import { motion } from "framer-motion";
 import aboutHero from "@/assets/about-hero.jpg";
+import founderImg from "@/assets/founder.jpeg";
 
 const sdgs = [
   { number: 4, title: "Quality Education", desc: "Ensuring inclusive and equitable quality education." },
@@ -65,6 +66,41 @@ const About = () => {
                 <span className="font-heading font-semibold text-foreground">{state}</span>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Founder */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-card border border-border rounded-2xl overflow-hidden"
+            >
+              <div className="grid md:grid-cols-[280px_1fr] items-center">
+                <div className="aspect-square md:aspect-auto md:h-full">
+                  <img
+                    src={founderImg}
+                    alt="Michael Edwin, Founder of Water and Wisdom Foundation"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-8 md:p-10">
+                  <span className="text-[10px] bg-secondary/10 text-secondary px-2 py-1 rounded font-heading font-semibold uppercase tracking-wider">
+                    Founder
+                  </span>
+                  <h3 className="font-heading font-extrabold text-2xl text-foreground mt-3 mb-2">
+                    Michael Edwin
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Michael Edwin is the visionary founder of the Water and Wisdom Foundation. Driven by a deep commitment to community transformation, he established the foundation to bridge the gap between access to clean water and quality education across southeastern Nigeria. His leadership continues to inspire volunteers, donors, and communities alike.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

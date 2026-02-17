@@ -2,6 +2,7 @@ import { Layout } from "@/components/Layout";
 import { motion } from "framer-motion";
 import aboutHero from "@/assets/about-hero.jpg";
 import founderImg from "@/assets/founder.jpeg";
+import logo from "@/assets/logo.jpeg";
 
 const sdgs = [
   { number: 4, title: "Quality Education", desc: "Ensuring inclusive and equitable quality education." },

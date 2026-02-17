@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { BookOpen } from "lucide-react";
+import { BookOpen, Search } from "lucide-react";
 import { StoryFilters } from "@/components/StoryFilters";
 import { TranslateButton } from "@/components/TranslateButton";
 
@@ -28,6 +28,7 @@ const Stories = () => {
   const [selected, setSelected] = useState<Story | null>(null);
   const [translatedContent, setTranslatedContent] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedSdg, setSelectedSdg] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
 
@@ -61,9 +62,18 @@ const Stories = () => {
     return stories.filter((s) => {
       if (selectedSdg && !(s.sdg_tags || []).includes(selectedSdg)) return false;
       if (selectedLocation && s.location !== selectedLocation) return false;
+      if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        if (
+          !s.title.toLowerCase().includes(q) &&
+          !(s.excerpt || "").toLowerCase().includes(q) &&
+          !(s.author_name || "").toLowerCase().includes(q)
+        )
+          return false;
+      }
       return true;
     });
-  }, [stories, selectedSdg, selectedLocation]);
+  }, [stories, selectedSdg, selectedLocation, searchQuery]);
 
   const openStory = (story: Story) => {
     setSelected(story);
@@ -91,6 +101,19 @@ const Stories = () => {
             <div className="text-center text-muted-foreground py-12">Loading stories…</div>
           ) : (
             <>
+              {/* Search bar */}
+              <div className="relative mb-6">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={18} />
+                <input
+                  type="text"
+                  placeholder="Search stories by title, author, or keyword…"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm font-heading focus:outline-none focus:ring-2 focus:ring-ring"
+                  aria-label="Search stories"
+                />
+              </div>
+
               <StoryFilters
                 sdgTags={allSdgTags}
                 locations={allLocations}

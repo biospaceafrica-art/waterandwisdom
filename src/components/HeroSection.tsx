@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 import heroWater from "@/assets/hero-water.jpg";
 import heroEducation from "@/assets/hero-education.jpg";
 import heroLeadership from "@/assets/hero-leadership.jpg";
@@ -14,11 +15,44 @@ const slides = [
 
 export function HeroSection() {
   const [current, setCurrent] = useState(0);
+  const [metrics, setMetrics] = useState({ donors: 0, totalRaised: 0, projects: 0 });
 
   useEffect(() => {
     const timer = setInterval(() => setCurrent((c) => (c + 1) % slides.length), 5000);
     return () => clearInterval(timer);
   }, []);
+
+  // Fetch live metrics
+  useEffect(() => {
+    const fetchMetrics = async () => {
+      const { data, count } = await supabase
+        .from("donations")
+        .select("amount, user_id", { count: "exact" });
+      if (data) {
+        const total = data.reduce((s, d) => s + Number(d.amount), 0);
+        const uniqueDonors = new Set(data.map((d) => d.user_id).filter(Boolean)).size;
+        setMetrics({ donors: uniqueDonors, totalRaised: total, projects: 14 });
+      }
+    };
+    fetchMetrics();
+
+    // Realtime subscription for live updates
+    const channel = supabase
+      .channel("hero-donations")
+      .on("postgres_changes", { event: "*", schema: "public", table: "donations" }, () => {
+        fetchMetrics();
+      })
+      .subscribe();
+
+    return () => { supabase.removeChannel(channel); };
+  }, []);
+
+  const formatCurrency = (val: number) =>
+    val >= 1_000_000
+      ? `₦${(val / 1_000_000).toFixed(1)}M`
+      : val >= 1_000
+      ? `₦${(val / 1_000).toFixed(0)}K`
+      : `₦${val.toLocaleString()}`;
 
   return (
     <section className="relative h-[90vh] min-h-[600px] overflow-hidden">
@@ -56,8 +90,8 @@ export function HeroSection() {
             {/* Live Impact Metrics */}
             <div className="flex flex-wrap gap-6 mb-10">
               {[
-                { value: "14+", label: "Schools" },
-                { value: "3,200+", label: "Students" },
+                { value: metrics.totalRaised > 0 ? formatCurrency(metrics.totalRaised) : "14+", label: metrics.totalRaised > 0 ? "Raised" : "Schools" },
+                { value: metrics.donors > 0 ? `${metrics.donors}+` : "3,200+", label: metrics.donors > 0 ? "Donors" : "Students" },
                 { value: "5", label: "States" },
               ].map((stat) => (
                 <div key={stat.label} className="text-left">

@@ -53,11 +53,13 @@ export function StatsSection() {
   return (
     <section className="bg-stats py-20">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <Counter end={14} suffix="+" label="Schools Supported" />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <Counter end={3} suffix="+" label="States Reached" />
+          <Counter end={14} label="Schools Engaged" />
           <Counter end={3200} suffix="+" label="Students Reached" />
-          <Counter end={5} label="States in Nigeria" />
-          <Counter prefix="₦" end={1380000} suffix="" label="Invested in Impact" />
+          <Counter end={2} label="Water Facilities" />
+          <Counter end={116} label="Values-Based Decisions" />
+          <Counter prefix="₦" end={1382000} suffix="" label="Programme Spend" />
         </div>
       </div>
     </section>

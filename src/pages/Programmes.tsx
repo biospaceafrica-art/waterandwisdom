@@ -1,6 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { motion } from "framer-motion";
-import { Droplets, GraduationCap, Compass, ArrowRight } from "lucide-react";
+import { Droplets, GraduationCap, Compass, ArrowRight, Target } from "lucide-react";
 
 const programmes = [
   {
@@ -9,6 +9,11 @@ const programmes = [
     tag: "WASH",
     description: "Our WASH programme provides boreholes, water filtration systems, and hygiene education to rural communities. We work alongside local governments to ensure long-term maintenance and sustainability.",
     activities: ["Borehole drilling & rehabilitation", "Community hygiene training", "School WASH facilities", "Water quality monitoring"],
+    targets2026: [
+      { indicator: "WASH Projects", target: "2 states" },
+      { indicator: "Beneficiaries", target: "1,500+" },
+      { indicator: "Hygiene Campaigns", target: "2" },
+    ],
   },
   {
     icon: GraduationCap,
@@ -16,6 +21,11 @@ const programmes = [
     tag: "Education",
     description: "We strengthen schools through infrastructure support, learning materials, teacher training, and scholarship programmes for underserved students — particularly girls.",
     activities: ["Classroom renovation", "Learning materials supply", "Teacher development", "Girls' scholarship fund"],
+    targets2026: [
+      { indicator: "Schools Engaged", target: "14+" },
+      { indicator: "Students Reached", target: "4,000+" },
+      { indicator: "Learning Materials", target: "Distributed" },
+    ],
   },
   {
     icon: Compass,
@@ -23,6 +33,12 @@ const programmes = [
     tag: "Leadership",
     description: "VALP equips young Nigerians with moral reasoning, civic responsibility, and practical leadership skills through mentoring, workshops, and community projects.",
     activities: ["Mentorship circles", "Leadership workshops", "Community service projects", "Annual Leadership Summit"],
+    targets2026: [
+      { indicator: "VALP Campaigns", target: "10 schools" },
+      { indicator: "Leadership Clubs", target: "10" },
+      { indicator: "Student Leaders Trained", target: "300+" },
+      { indicator: "Prefect Summit", target: "1 (Cross River)" },
+    ],
   },
 ];
 
@@ -66,13 +82,29 @@ const Programmes = () => {
                     </span>
                     <h2 className="font-heading font-bold text-2xl md:text-3xl text-foreground mb-4">{prog.title}</h2>
                     <p className="text-muted-foreground leading-relaxed mb-6">{prog.description}</p>
-                    <div className="grid sm:grid-cols-2 gap-3">
+                    <div className="grid sm:grid-cols-2 gap-3 mb-8">
                       {prog.activities.map((act) => (
                         <div key={act} className="flex items-center gap-2 text-sm text-foreground">
                           <ArrowRight size={14} className="text-secondary shrink-0" />
                           <span>{act}</span>
                         </div>
                       ))}
+                    </div>
+
+                    {/* 2026 Targets */}
+                    <div className="bg-muted rounded-xl p-5 border border-border">
+                      <div className="flex items-center gap-2 mb-3">
+                        <Target size={16} className="text-secondary" />
+                        <span className="font-heading font-semibold text-sm text-foreground">2026 Targets</span>
+                      </div>
+                      <div className="grid sm:grid-cols-2 gap-2">
+                        {prog.targets2026.map((t) => (
+                          <div key={t.indicator} className="flex justify-between text-sm px-3 py-2 bg-card rounded-lg">
+                            <span className="text-muted-foreground">{t.indicator}</span>
+                            <span className="font-heading font-semibold text-secondary">{t.target}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>

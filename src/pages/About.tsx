@@ -2,7 +2,8 @@ import { Layout } from "@/components/Layout";
 import { motion } from "framer-motion";
 import aboutHero from "@/assets/about-hero.jpg";
 import founderImg from "@/assets/founder.jpeg";
-import logo from "@/assets/logo.jpeg";
+import reportVision from "@/assets/report-vision.jpg";
+import reportBorehole from "@/assets/report-borehole.jpg";
 
 const sdgs = [
   { number: 4, title: "Quality Education", desc: "Ensuring inclusive and equitable quality education." },
@@ -32,41 +33,54 @@ const About = () => {
       {/* Vision & Mission */}
       <section className="py-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-card border border-border rounded-xl p-8">
-              <h3 className="font-heading font-bold text-xl text-secondary mb-4">Our Vision</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                A Nigeria where every child has access to clean water, quality education, and the values needed to lead with integrity and purpose.
-              </p>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="bg-card border border-border rounded-xl p-8">
-              <h3 className="font-heading font-bold text-xl text-wwf-amber mb-4">Our Mission</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                To deliver integrated water, education, and leadership development programmes that empower communities and build resilient futures for Nigeria's children.
-              </p>
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+            <div className="space-y-6">
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-card border border-border rounded-xl p-8">
+                <h3 className="font-heading font-bold text-xl text-secondary mb-4">Our Vision</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  A sustainable future where every child and community has access to safe water, quality education, and values-driven leadership.
+                </p>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="bg-card border border-border rounded-xl p-8">
+                <h3 className="font-heading font-bold text-xl text-wwf-amber mb-4">Our Mission</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  To transform lives in underserved communities through sustainable water solutions, education support, and leadership development anchored on strong values.
+                </p>
+              </motion.div>
+            </div>
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
+              <img src={reportVision} alt="Community engagement meeting" className="rounded-2xl w-full shadow-lg" />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* States Map */}
+      {/* Programme Overview with image */}
       <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 lg:px-8 text-center">
-          <h2 className="font-heading font-bold text-3xl text-foreground mb-4">Where We Work</h2>
-          <p className="text-muted-foreground mb-12 max-w-xl mx-auto">Active in 5 states across southeastern Nigeria</p>
-          <div className="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
-            {["Cross River", "Akwa Ibom", "Abia", "Enugu", "Ebonyi"].map((state, i) => (
-              <motion.div
-                key={state}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-card border border-border rounded-lg px-6 py-4 shadow-sm"
-              >
-                <span className="font-heading font-semibold text-foreground">{state}</span>
-              </motion.div>
-            ))}
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
+              <img src={reportBorehole} alt="Borehole construction in progress" className="rounded-2xl w-full shadow-lg" />
+            </motion.div>
+            <div>
+              <h2 className="font-heading font-bold text-3xl text-foreground mb-4">Programme Overview</h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                WWF delivers impact through three integrated programme pillars prioritising community ownership, school-based interventions, accountability, and alignment with global development best practices.
+              </p>
+              <div className="space-y-3">
+                {["End Water Crisis Initiative (WASH)", "Values, Academics and Leadership Programme (VALP)", "Sustainable Education Support"].map((p) => (
+                  <div key={p} className="bg-card border border-border rounded-lg px-5 py-3 font-heading font-semibold text-sm text-foreground">{p}</div>
+                ))}
+              </div>
+              <div className="mt-8">
+                <h3 className="font-heading font-semibold text-foreground mb-3">Where We Work</h3>
+                <div className="flex flex-wrap gap-2">
+                  {["Cross River", "Akwa Ibom", "Abia", "Enugu", "Ebonyi"].map((state) => (
+                    <span key={state} className="bg-secondary/10 text-secondary font-heading font-semibold text-xs px-3 py-1.5 rounded-full">{state}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

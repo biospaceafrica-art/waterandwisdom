@@ -2,28 +2,30 @@ import { Layout } from "@/components/Layout";
 import { StatsSection } from "@/components/StatsSection";
 import { motion } from "framer-motion";
 import { Shield, BookOpen, Target, Users, Lightbulb, AlertTriangle, Heart } from "lucide-react";
-import heroWater from "@/assets/hero-water.jpg";
-import heroEducation from "@/assets/hero-education.jpg";
-import heroLeadership from "@/assets/hero-leadership.jpg";
+import reportSignboard from "@/assets/report-signboard-2023.jpg";
+import reportCatalyst from "@/assets/report-catalyst-2024.jpg";
+import reportValp from "@/assets/report-valp-2025.jpg";
+import reportGovernance from "@/assets/report-governance.jpg";
+import reportStrategy from "@/assets/report-strategy-2026.jpg";
 
 const stories = [
   {
-    image: heroWater,
+    image: reportSignboard,
     tag: "WASH",
     title: "Clean Water, Renewed Hope",
-    excerpt: "A community in Cross River State now has 24/7 access to clean water, reducing waterborne diseases by 70%.",
+    excerpt: "Installation of a functional hand-pump borehole at Oberiakia Community, Akamkpa LGA, Cross River State — improving safe water access for households.",
   },
   {
-    image: heroEducation,
-    tag: "Education",
-    title: "Classrooms That Inspire",
-    excerpt: "Renovated classrooms and new learning materials led to a 40% improvement in test scores across partner schools.",
-  },
-  {
-    image: heroLeadership,
+    image: reportCatalyst,
     tag: "Leadership",
-    title: "Tomorrow's Leaders Today",
-    excerpt: "VALP graduates are starting community projects and mentoring younger students across five states.",
+    title: "Catalysts for Change",
+    excerpt: "VALP campaigns across 10 schools in 2024 reached 1,700+ students with 52 documented values-based decisions and 300 branded materials distributed.",
+  },
+  {
+    image: reportValp,
+    tag: "Education",
+    title: "Values in Action — 2025",
+    excerpt: "4 schools across CRS and AKS engaged, 1,500+ students reached, 64 decisions documented, and 500 branded notebooks distributed.",
   },
 ];
 
@@ -146,12 +148,12 @@ const Impact = () => {
       {/* Governance, Transparency & Safeguarding */}
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="font-heading font-extrabold text-3xl md:text-4xl mb-8">
                 Governance, Transparency & Safeguarding
               </h2>
-              <ul className="space-y-4">
+              <ul className="space-y-4 mb-6">
                 {governance.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <Shield size={18} className="text-secondary shrink-0 mt-1" />
@@ -159,6 +161,10 @@ const Impact = () => {
                   </li>
                 ))}
               </ul>
+              <p className="text-sm text-primary-foreground/70">Total Expenditure (2024): ₦852,000 · SDG Contribution: SDGs 4 & 6</p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
+              <img src={reportGovernance} alt="Audited Financial Reports" className="rounded-2xl w-full shadow-lg" />
             </motion.div>
           </div>
         </div>
@@ -266,6 +272,27 @@ const Impact = () => {
                 <span className="font-heading font-semibold text-sm text-foreground">{item.label}</span>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 Strategic Intent */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
+              <img src={reportStrategy} alt="Strategic Intent for 2026 — community facilitator" className="rounded-2xl w-full shadow-lg" />
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-foreground mb-4">Strategic Intent for 2026</h2>
+              <p className="text-secondary font-heading font-semibold mb-3">Theme: Scaling Impact, Deepening Sustainability, Strengthening Partnerships</p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                To scale WWF's integrated education, leadership, and WASH interventions across five states while strengthening systems, partnerships, and sustainability.
+              </p>
+              <a href="/contact" className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground font-heading font-semibold px-10 py-3 rounded-lg transition-colors">
+                Partner With Us
+              </a>
+            </motion.div>
           </div>
         </div>
       </section>

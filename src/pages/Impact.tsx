@@ -1,5 +1,7 @@
 import { Layout } from "@/components/Layout";
 import { StatsSection } from "@/components/StatsSection";
+import { InlineDonationForm } from "@/components/InlineDonationForm";
+import { StrategicTimeline } from "@/components/StrategicTimeline";
 import { motion } from "framer-motion";
 import { Shield, BookOpen, Target, Users, Lightbulb, AlertTriangle, Heart } from "lucide-react";
 import reportSignboard from "@/assets/report-signboard-2023.jpg";
@@ -114,7 +116,6 @@ const Impact = () => {
         </div>
       </section>
 
-      {/* Stats */}
       <StatsSection />
 
       {/* Stories of Change */}
@@ -145,7 +146,10 @@ const Impact = () => {
         </div>
       </section>
 
-      {/* Governance, Transparency & Safeguarding */}
+      {/* Inline Donation Form */}
+      <InlineDonationForm />
+
+      {/* Governance */}
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
@@ -203,6 +207,9 @@ const Impact = () => {
           </div>
         </div>
       </section>
+
+      {/* Strategic Timeline */}
+      <StrategicTimeline />
 
       {/* 2026 Strategic Objectives */}
       <section className="py-20 bg-muted">
@@ -276,7 +283,7 @@ const Impact = () => {
         </div>
       </section>
 
-      {/* 2026 Strategic Intent */}
+      {/* Strategic Intent 2026 */}
       <section className="py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">

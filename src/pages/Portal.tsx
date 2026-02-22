@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { LogOut, FileText, Target, DollarSign, TrendingUp } from "lucide-react";
+import { LogOut, FileText, Target, DollarSign, TrendingUp, Download, Users, Droplets, GraduationCap } from "lucide-react";
 import type { User } from "@supabase/supabase-js";
 import { RegionHeatmap } from "@/components/RegionHeatmap";
 import { SdgExportButton } from "@/components/SdgExportButton";
@@ -37,6 +37,13 @@ interface ProfileRow {
   display_name: string | null;
   organization: string | null;
 }
+
+const impactMetrics = [
+  { icon: Users, label: "Students Reached", value: "3,200+", trend: "+47% YoY" },
+  { icon: Droplets, label: "Water Facilities", value: "2", trend: "Active" },
+  { icon: GraduationCap, label: "Schools Engaged", value: "14", trend: "5 states" },
+  { icon: Target, label: "Values Decisions", value: "116", trend: "Documented" },
+];
 
 const Portal = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -80,11 +87,54 @@ const Portal = () => {
     setLoading(false);
   };
 
+  // Set up realtime for donations
+  useEffect(() => {
+    if (!user) return;
+    const channel = supabase
+      .channel("portal-donations")
+      .on("postgres_changes", { event: "*", schema: "public", table: "donations" }, () => {
+        fetchData(user.id);
+      })
+      .subscribe();
+    return () => { supabase.removeChannel(channel); };
+  }, [user]);
+
   const handleSignOut = async () => {
     await supabase.auth.signOut();
   };
 
   const totalDonated = donations.reduce((sum, d) => sum + Number(d.amount), 0);
+
+  const handleDownloadReport = () => {
+    const lines = [
+      "Water and Wisdom Foundation — Impact Report",
+      `Generated: ${new Date().toLocaleDateString()}`,
+      `Donor: ${profile?.display_name || user?.email}`,
+      "",
+      "=== Donation Summary ===",
+      `Total Donated: ₦${totalDonated.toLocaleString()}`,
+      `Number of Donations: ${donations.length}`,
+      `SDGs Supported: ${new Set(donations.flatMap(d => d.sdg_alignment || [])).size}`,
+      "",
+      "=== Impact Metrics (2023-2025) ===",
+      "Students Reached: 3,200+",
+      "Schools Engaged: 14",
+      "Water Facilities: 2",
+      "Values-Based Decisions: 116",
+      "States Reached: 3+",
+      "Programme Spend: ₦1,382,000",
+      "",
+      "=== Donation History ===",
+      ...donations.map(d => `${new Date(d.donated_at).toLocaleDateString()} | ${d.currency} ${Number(d.amount).toLocaleString()} | ${d.purpose || "General Fund"} | #${d.receipt_number}`),
+    ];
+    const blob = new Blob([lines.join("\n")], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `wwf-impact-report-${new Date().toISOString().slice(0, 10)}.txt`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
 
   if (loading) {
     return (
@@ -109,9 +159,14 @@ const Portal = () => {
                 <p className="text-muted-foreground text-sm mt-1">{profile.organization}</p>
               )}
             </div>
-            <Button variant="outline" size="sm" onClick={handleSignOut}>
-              <LogOut size={16} className="mr-2" /> Sign Out
-            </Button>
+            <div className="flex gap-2">
+              <Button variant="outline" size="sm" onClick={handleDownloadReport} className="gap-2">
+                <Download size={16} /> Download Report
+              </Button>
+              <Button variant="outline" size="sm" onClick={handleSignOut}>
+                <LogOut size={16} className="mr-2" /> Sign Out
+              </Button>
+            </div>
           </div>
 
           {/* Tabs */}
@@ -138,6 +193,26 @@ const Portal = () => {
           {/* Dashboard */}
           {activeTab === "dashboard" && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
+              {/* Real-time Impact Metrics */}
+              <div>
+                <h3 className="font-heading font-bold text-lg text-foreground mb-4">Real-Time Impact Dashboard</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {impactMetrics.map(({ icon: Icon, label, value, trend }) => (
+                    <div key={label} className="bg-card border border-border rounded-2xl p-5">
+                      <div className="flex items-center gap-2 mb-3">
+                        <div className="w-9 h-9 rounded-lg bg-secondary/10 flex items-center justify-center">
+                          <Icon className="text-secondary" size={18} />
+                        </div>
+                      </div>
+                      <p className="font-heading font-extrabold text-2xl text-foreground">{value}</p>
+                      <p className="text-xs text-muted-foreground font-heading mt-1">{label}</p>
+                      <p className="text-xs text-secondary font-heading mt-0.5">{trend}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Personal Stats */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <StatCard icon={DollarSign} label="Total Donated" value={`₦${totalDonated.toLocaleString()}`} />
                 <StatCard icon={FileText} label="Receipts" value={String(donations.length)} />
@@ -176,7 +251,6 @@ const Portal = () => {
                 </div>
               </div>
 
-              {/* Region Heatmap */}
               <RegionHeatmap />
             </motion.div>
           )}

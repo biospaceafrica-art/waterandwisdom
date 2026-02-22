@@ -2,13 +2,31 @@ import { Layout } from "@/components/Layout";
 import { motion } from "framer-motion";
 import aboutHero from "@/assets/about-hero.jpg";
 import founderImg from "@/assets/founder.jpeg";
+import programmesMgrImg from "@/assets/programmes-manager.jpg";
 import reportVision from "@/assets/report-vision.jpg";
 import reportBorehole from "@/assets/report-borehole.jpg";
+import { MediaGallery } from "@/components/MediaGallery";
 
 const sdgs = [
   { number: 4, title: "Quality Education", desc: "Ensuring inclusive and equitable quality education." },
   { number: 6, title: "Clean Water & Sanitation", desc: "Ensuring access to water and sanitation for all." },
   { number: 9, title: "Industry & Innovation", desc: "Building resilient infrastructure." },
+];
+
+const teamMembers = [
+  {
+    name: "Michael Edwin",
+    role: "Founder & Chairman",
+    credentials: "FCA, FCTI, CISA",
+    image: founderImg,
+    bio: "Visionary founder driven by a deep commitment to community transformation, bridging access to clean water and quality education across southeastern Nigeria.",
+  },
+  {
+    name: "Ekuri, Ekuri Asu",
+    role: "Programmes Manager",
+    image: programmesMgrImg,
+    bio: "Leading the operational delivery of WWF's integrated education, leadership, and WASH programmes across multiple states.",
+  },
 ];
 
 const About = () => {
@@ -55,7 +73,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Programme Overview with image */}
+      {/* Programme Overview */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
@@ -85,43 +103,44 @@ const About = () => {
         </div>
       </section>
 
-      {/* Founder */}
-      <section className="py-20 bg-muted">
+      {/* Team */}
+      <section className="py-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-card border border-border rounded-2xl overflow-hidden"
-            >
-              <div className="grid md:grid-cols-[280px_1fr] items-center">
-                <div className="aspect-square md:aspect-auto md:h-full">
-                  <img
-                    src={founderImg}
-                    alt="Michael Edwin, Founder of Water and Wisdom Foundation"
-                    className="w-full h-full object-cover"
-                  />
+          <h2 className="font-heading font-extrabold text-3xl text-foreground text-center mb-12">Our Leadership</h2>
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+            {teamMembers.map((member, i) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+                className="bg-card border border-border rounded-2xl overflow-hidden"
+              >
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top" />
                 </div>
-                <div className="p-8 md:p-10">
+                <div className="p-6">
                   <span className="text-[10px] bg-secondary/10 text-secondary px-2 py-1 rounded font-heading font-semibold uppercase tracking-wider">
-                    Founder
+                    {member.role}
                   </span>
-                  <h3 className="font-heading font-extrabold text-2xl text-foreground mt-3 mb-2">
-                    Michael Edwin
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Michael Edwin is the visionary founder of the Water and Wisdom Foundation. Driven by a deep commitment to community transformation, he established the foundation to bridge the gap between access to clean water and quality education across southeastern Nigeria. His leadership continues to inspire volunteers, donors, and communities alike.
-                  </p>
+                  <h3 className="font-heading font-extrabold text-xl text-foreground mt-3 mb-1">{member.name}</h3>
+                  {member.credentials && (
+                    <p className="text-xs text-muted-foreground font-heading mb-2">{member.credentials}</p>
+                  )}
+                  <p className="text-sm text-muted-foreground leading-relaxed">{member.bio}</p>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
+      {/* Media Gallery */}
+      <MediaGallery />
+
       {/* SDGs */}
-      <section className="py-20">
+      <section className="py-20 bg-muted">
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <h2 className="font-heading font-bold text-3xl text-foreground mb-4">Global Alignment</h2>
           <p className="text-muted-foreground mb-12 max-w-xl mx-auto">Our programmes directly contribute to the UN Sustainable Development Goals.</p>

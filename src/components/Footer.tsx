@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Instagram, Facebook } from "lucide-react";
 import { NewsletterForm } from "./NewsletterForm";
 import logo from "@/assets/logo-official.jpeg";
 
@@ -57,6 +57,26 @@ export function Footer() {
             >
               <Phone size={13} className="shrink-0" />
               <span>+234 806 938 7354</span>
+            </a>
+            <a
+              href="https://www.instagram.com/the_waterandwisdomfoundation?igsh=cXliaGw4ZGVzMnNk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 opacity-70 hover:opacity-100 transition-opacity"
+              aria-label="Instagram"
+            >
+              <Instagram size={13} className="shrink-0" />
+              <span className="hidden sm:inline">Instagram</span>
+            </a>
+            <a
+              href="https://www.facebook.com/share/188HiU9Qu1/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 opacity-70 hover:opacity-100 transition-opacity"
+              aria-label="Facebook"
+            >
+              <Facebook size={13} className="shrink-0" />
+              <span className="hidden sm:inline">Facebook</span>
             </a>
           </div>
         </div>

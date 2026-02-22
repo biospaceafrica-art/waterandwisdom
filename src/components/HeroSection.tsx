@@ -3,14 +3,18 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
-import heroWater from "@/assets/hero-water.jpg";
-import heroEducation from "@/assets/hero-education.jpg";
-import heroLeadership from "@/assets/hero-leadership.jpg";
+import reportCover from "@/assets/report-cover.jpg";
+import reportBorehole from "@/assets/report-borehole.jpg";
+import reportCatalyst from "@/assets/report-catalyst-2024.jpg";
+import reportValp from "@/assets/report-valp-2025.jpg";
+import reportStrategy from "@/assets/report-strategy-2026.jpg";
 
 const slides = [
-  { image: heroWater, alt: "Children drinking clean water" },
-  { image: heroEducation, alt: "Students in classroom" },
-  { image: heroLeadership, alt: "Mentor speaking to youth" },
+  { image: reportCover, alt: "WWF Impact Report — students and borehole construction" },
+  { image: reportBorehole, alt: "Borehole construction — End Water Crisis Initiative" },
+  { image: reportCatalyst, alt: "VALP 2024 — Catalysts for Change" },
+  { image: reportValp, alt: "VALP 2025 — Students with values message cards" },
+  { image: reportStrategy, alt: "Community facilitation — Strategic Intent 2026" },
 ];
 
 export function HeroSection() {
@@ -22,12 +26,11 @@ export function HeroSection() {
     return () => clearInterval(timer);
   }, []);
 
-  // Fetch live metrics
   useEffect(() => {
     const fetchMetrics = async () => {
-      const { data, count } = await supabase
+      const { data } = await supabase
         .from("donations")
-        .select("amount, user_id", { count: "exact" });
+        .select("amount, user_id");
       if (data) {
         const total = data.reduce((s, d) => s + Number(d.amount), 0);
         const uniqueDonors = new Set(data.map((d) => d.user_id).filter(Boolean)).size;
@@ -36,7 +39,6 @@ export function HeroSection() {
     };
     fetchMetrics();
 
-    // Realtime subscription for live updates
     const channel = supabase
       .channel("hero-donations")
       .on("postgres_changes", { event: "*", schema: "public", table: "donations" }, () => {
@@ -61,10 +63,10 @@ export function HeroSection() {
           key={current}
           src={slides[current].image}
           alt={slides[current].alt}
-          initial={{ opacity: 0, scale: 1.05 }}
+          initial={{ opacity: 0, scale: 1.08 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1.2 }}
           className="absolute inset-0 w-full h-full object-cover"
         />
       </AnimatePresence>
@@ -87,7 +89,6 @@ export function HeroSection() {
               Transforming lives through water, education, and values-driven leadership across Nigeria.
             </p>
 
-            {/* Live Impact Metrics */}
             <div className="flex flex-wrap gap-6 mb-10">
               {[
                 { value: metrics.totalRaised > 0 ? formatCurrency(metrics.totalRaised) : "14+", label: metrics.totalRaised > 0 ? "Raised" : "Schools" },
@@ -121,7 +122,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Slide indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2">
         {slides.map((_, i) => (
           <button

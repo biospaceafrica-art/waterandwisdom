@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { DarkModeToggle } from "./DarkModeToggle";
@@ -48,8 +48,14 @@ export function Header() {
           ))}
         </nav>
 
-        {/* CTA Buttons + Language + Dark Mode */}
+        {/* CTA Buttons + Social + Language + Dark Mode */}
         <div className="hidden lg:flex items-center gap-2">
+          <a href="https://www.instagram.com/the_waterandwisdomfoundation?igsh=cXliaGw4ZGVzMnNk" target="_blank" rel="noopener noreferrer" className="p-2 text-muted-foreground hover:text-foreground transition-colors" aria-label="Instagram">
+            <Instagram size={16} />
+          </a>
+          <a href="https://www.facebook.com/share/188HiU9Qu1/" target="_blank" rel="noopener noreferrer" className="p-2 text-muted-foreground hover:text-foreground transition-colors" aria-label="Facebook">
+            <Facebook size={16} />
+          </a>
           <LanguageSwitcher />
           <DarkModeToggle />
           <Button variant="outline" size="sm" asChild>

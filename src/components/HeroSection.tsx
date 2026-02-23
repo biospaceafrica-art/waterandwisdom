@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
-import reportCover from "@/assets/report-cover.jpg";
-import reportBorehole from "@/assets/report-borehole.jpg";
-import reportCatalyst from "@/assets/report-catalyst-2024.jpg";
-import reportValp from "@/assets/report-valp-2025.jpg";
-import reportStrategy from "@/assets/report-strategy-2026.jpg";
+import impactStudentsHall from "@/assets/impact-students-hall.jpg";
+import impactNotebook from "@/assets/impact-notebook-distribution.jpg";
+import impactCatalystGirl from "@/assets/impact-catalyst-girl.jpg";
+import impactValpSpeaker from "@/assets/impact-valp-speaker.jpg";
+import impactStrivingGirl from "@/assets/impact-striving-girl.jpg";
 
 const slides = [
-  { image: reportCover, alt: "WWF Impact Report — students and borehole construction" },
-  { image: reportBorehole, alt: "Borehole construction — End Water Crisis Initiative" },
-  { image: reportCatalyst, alt: "VALP 2024 — Catalysts for Change" },
-  { image: reportValp, alt: "VALP 2025 — Students with values message cards" },
-  { image: reportStrategy, alt: "Community facilitation — Strategic Intent 2026" },
+  { image: impactStudentsHall, alt: "Excited students during a VALP campaign session" },
+  { image: impactNotebook, alt: "Branded notebook distribution to students across schools" },
+  { image: impactCatalystGirl, alt: "Student holding 'I Am a Catalyst for Change' card" },
+  { image: impactValpSpeaker, alt: "VALP facilitator engaging students in values-based leadership" },
+  { image: impactStrivingGirl, alt: "Student holding 'Striving for A+ in Every Endeavour' message" },
 ];
 
 export function HeroSection() {

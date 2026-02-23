@@ -2,24 +2,24 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
-import reportCover from "@/assets/report-cover.jpg";
-import reportVision from "@/assets/report-vision.jpg";
-import reportBorehole from "@/assets/report-borehole.jpg";
-import reportSignboard from "@/assets/report-signboard-2023.jpg";
-import reportCatalyst from "@/assets/report-catalyst-2024.jpg";
-import reportValp from "@/assets/report-valp-2025.jpg";
-import reportGovernance from "@/assets/report-governance.jpg";
-import reportStrategy from "@/assets/report-strategy-2026.jpg";
+import impactStudentsHall from "@/assets/impact-students-hall.jpg";
+import impactStudentsOutdoor from "@/assets/impact-students-outdoor.jpg";
+import impactNotebook from "@/assets/impact-notebook-distribution.jpg";
+import impactWashMessage from "@/assets/impact-wash-message.jpg";
+import impactCatalystGirl from "@/assets/impact-catalyst-girl.jpg";
+import impactStudentsSigns from "@/assets/impact-students-signs.jpg";
+import impactValpSession from "@/assets/impact-valp-session.jpg";
+import impactCertificate from "@/assets/impact-certificate.jpg";
 
 const galleryItems = [
-  { src: reportCover, caption: "WWF Impact Report 2023–2025 & Strategic Action Plan 2026" },
-  { src: reportVision, caption: "Community engagement and stakeholder meetings" },
-  { src: reportBorehole, caption: "Borehole construction — End Water Crisis Initiative" },
-  { src: reportSignboard, caption: "Project signboard at Oberiakia Community, Akamkpa LGA" },
-  { src: reportCatalyst, caption: "VALP 2024 — Catalysts for Change campaign in schools" },
-  { src: reportValp, caption: "VALP 2025 — Students holding values-based message cards" },
-  { src: reportGovernance, caption: "Audited Financial Reports — Governance & Accountability" },
-  { src: reportStrategy, caption: "Strategic Intent for 2026 — Community facilitation" },
+  { src: impactStudentsHall, caption: "Students excited during a VALP values campaign session" },
+  { src: impactStudentsOutdoor, caption: "Students gathered for outdoor VALP engagement programme" },
+  { src: impactNotebook, caption: "Branded notebook and materials distribution across schools" },
+  { src: impactWashMessage, caption: "Spread Love, Not Germs — WASH hygiene awareness campaign" },
+  { src: impactCatalystGirl, caption: "Student declaring 'I Am a Catalyst for Change' at VALP" },
+  { src: impactStudentsSigns, caption: "Students holding values-based message cards during campaign" },
+  { src: impactValpSession, caption: "VALP facilitator addressing students during school session" },
+  { src: impactCertificate, caption: "Certificate presentation at VALP programme completion" },
 ];
 
 export function MediaGallery() {

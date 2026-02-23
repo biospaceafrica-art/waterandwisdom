@@ -4,27 +4,27 @@ import { InlineDonationForm } from "@/components/InlineDonationForm";
 import { StrategicTimeline } from "@/components/StrategicTimeline";
 import { motion } from "framer-motion";
 import { Shield, BookOpen, Target, Users, Lightbulb, AlertTriangle, Heart } from "lucide-react";
-import reportSignboard from "@/assets/report-signboard-2023.jpg";
-import reportCatalyst from "@/assets/report-catalyst-2024.jpg";
-import reportValp from "@/assets/report-valp-2025.jpg";
 import reportGovernance from "@/assets/report-governance.jpg";
 import reportStrategy from "@/assets/report-strategy-2026.jpg";
+import impactStudentsHall from "@/assets/impact-students-hall.jpg";
+import impactNotebook from "@/assets/impact-notebook-distribution.jpg";
+import impactValpSpeaker from "@/assets/impact-valp-speaker.jpg";
 
 const stories = [
   {
-    image: reportSignboard,
+    image: impactStudentsHall,
     tag: "WASH",
     title: "Clean Water, Renewed Hope",
     excerpt: "Installation of a functional hand-pump borehole at Oberiakia Community, Akamkpa LGA, Cross River State — improving safe water access for households.",
   },
   {
-    image: reportCatalyst,
+    image: impactValpSpeaker,
     tag: "Leadership",
     title: "Catalysts for Change",
     excerpt: "VALP campaigns across 10 schools in 2024 reached 1,700+ students with 52 documented values-based decisions and 300 branded materials distributed.",
   },
   {
-    image: reportValp,
+    image: impactNotebook,
     tag: "Education",
     title: "Values in Action — 2025",
     excerpt: "4 schools across CRS and AKS engaged, 1,500+ students reached, 64 decisions documented, and 500 branded notebooks distributed.",

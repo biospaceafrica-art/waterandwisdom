@@ -10,11 +10,36 @@ import impactValpSpeaker from "@/assets/impact-valp-speaker.jpg";
 import impactStrivingGirl from "@/assets/impact-striving-girl.jpg";
 
 const slides = [
-  { image: impactStudentsHall, alt: "Excited students during a VALP campaign session" },
-  { image: impactNotebook, alt: "Branded notebook distribution to students across schools" },
-  { image: impactCatalystGirl, alt: "Student holding 'I Am a Catalyst for Change' card" },
-  { image: impactValpSpeaker, alt: "VALP facilitator engaging students in values-based leadership" },
-  { image: impactStrivingGirl, alt: "Student holding 'Striving for A+ in Every Endeavour' message" },
+  {
+    image: impactStudentsHall,
+    alt: "Excited students during a VALP campaign session",
+    headline: "Igniting Values in Young Minds",
+    caption: "850+ students reached with values-based leadership in 2024",
+  },
+  {
+    image: impactNotebook,
+    alt: "Branded notebook distribution to students across schools",
+    headline: "Education That Transforms",
+    caption: "500 branded notebooks empowering students across 4 schools",
+  },
+  {
+    image: impactCatalystGirl,
+    alt: "Student holding 'I Am a Catalyst for Change' card",
+    headline: "Catalysts for Change",
+    caption: "Every child a leader — 116 documented values-based decisions",
+  },
+  {
+    image: impactValpSpeaker,
+    alt: "VALP facilitator engaging students in values-based leadership",
+    headline: "Leadership Rooted in Purpose",
+    caption: "VALP campaigns across 14 schools in 3+ states",
+  },
+  {
+    image: impactStrivingGirl,
+    alt: "Student holding 'Striving for A+ in Every Endeavour' message",
+    headline: "Striving for Excellence",
+    caption: "Building a generation that leads with integrity and ambition",
+  },
 ];
 
 export function HeroSection() {
@@ -85,9 +110,24 @@ export function HeroSection() {
               Where Clean Water{" "}
               <span className="text-accent">Meets Education.</span>
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80 font-body mb-8 max-w-xl leading-relaxed">
+            <p className="text-lg md:text-xl text-primary-foreground/80 font-body mb-4 max-w-xl leading-relaxed">
               Transforming lives through water, education, and values-driven leadership across Nigeria.
             </p>
+
+            {/* Storytelling caption from current slide */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.5 }}
+                className="mb-8"
+              >
+                <p className="font-heading font-semibold text-accent text-lg md:text-xl">{slides[current].headline}</p>
+                <p className="text-primary-foreground/60 text-sm font-heading mt-1">{slides[current].caption}</p>
+              </motion.div>
+            </AnimatePresence>
 
             <div className="flex flex-wrap gap-6 mb-10">
               {[
@@ -122,17 +162,29 @@ export function HeroSection() {
         </div>
       </div>
 
+      {/* Slide indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`w-2.5 h-2.5 rounded-full transition-all ${
-              i === current ? "bg-accent w-8" : "bg-primary-foreground/40"
+            className={`h-2.5 rounded-full transition-all ${
+              i === current ? "bg-accent w-8" : "bg-primary-foreground/40 w-2.5"
             }`}
             aria-label={`Go to slide ${i + 1}`}
           />
         ))}
+      </div>
+
+      {/* Progress bar */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 h-1 bg-primary-foreground/10">
+        <motion.div
+          key={current}
+          initial={{ width: "0%" }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 5, ease: "linear" }}
+          className="h-full bg-accent/60"
+        />
       </div>
     </section>
   );

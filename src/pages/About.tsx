@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import aboutHero from "@/assets/about-hero.jpg";
 import founderImg from "@/assets/founder.jpeg";
 import programmesMgrImg from "@/assets/programmes-manager.jpg";
+import viceChairImg from "@/assets/vice-chairman.jpg";
 import reportVision from "@/assets/report-vision.jpg";
 import reportBorehole from "@/assets/report-borehole.jpg";
 import { MediaGallery } from "@/components/MediaGallery";
@@ -20,6 +21,12 @@ const teamMembers = [
     credentials: "FCA, FCTI, CISA",
     image: founderImg,
     bio: "Visionary founder driven by a deep commitment to community transformation, bridging access to clean water and quality education across southeastern Nigeria.",
+  },
+  {
+    name: "Mrs. Enobong Edwin Michael",
+    role: "Vice Chairman, Member Board of Trustees",
+    image: viceChairImg,
+    bio: "A dedicated leader and Board of Trustees member, championing governance, accountability, and strategic partnerships for sustainable community impact.",
   },
   {
     name: "Ekuri, Ekuri Asu",
@@ -107,7 +114,7 @@ const About = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <h2 className="font-heading font-extrabold text-3xl text-foreground text-center mb-12">Our Leadership</h2>
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
             {teamMembers.map((member, i) => (
               <motion.div
                 key={member.name}

@@ -1,8 +1,4 @@
-# .github/workflows/deploy.yml
-# This workflow builds the Vite app, runs tests (if any), and deploys to GitHub Pages on release creation.
-# For more info: https://docs.github.com/en/pages/quickstart
-
-name: Deploy to GitHub Pages
+name: Deploy to AWS S3
 
 on:
   release:
@@ -10,15 +6,11 @@ on:
 
 permissions:
   contents: read
-  pages: write
   id-token: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout code
@@ -39,16 +31,14 @@ jobs:
       - name: Build project
         env:
           CI: false
-        run: npm run build -- --base=/${{ github.event.repository.name }}/
+        run: npm run build
 
-      - name: Setup GitHub Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          path: ./dist  # Vite build output folder
+          role-to-assume: arn:aws:iam::454518197747:role/GitHubActionsWaterAndWisdomRole
+          aws-region: af-south-1
+          role-session-name: GitHubActions
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy to S3
+        run: aws s3 sync dist/ s3://your-bucket-name/ --delete

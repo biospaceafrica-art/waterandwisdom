@@ -1,8 +1,14 @@
-name: Deploy to AWS S3
+name: Water and Wisdom CI & Deploy
 
 on:
-  release:
-    types: [created]
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -10,6 +16,7 @@ permissions:
 
 jobs:
   build-and-deploy:
+    name: Build & Deploy to AWS Lambda
     runs-on: ubuntu-latest
 
     steps:
@@ -33,12 +40,22 @@ jobs:
           CI: false
         run: npm run build
 
+      # Only configure AWS + deploy on push to main
       - name: Configure AWS Credentials
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::454518197747:role/GitHubActionsWaterAndWisdomRole
+          role-to-assume: arn:aws:iam::454518197747:role/WaterAndWisdomDeployRole
           aws-region: af-south-1
-          role-session-name: GitHubActions
+          role-session-name: GitHubActionsDeploy
 
-      - name: Deploy to S3
-        run: aws s3 sync dist/ s3://your-bucket-name/ --delete
+      - name: Zip build artifacts
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: zip -r deployment.zip dist/
+
+      - name: Deploy to Lambda
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          aws lambda update-function-code \
+            --function-name water-and-wisdom-lambda \
+            --zip-file fileb://deployment.zip

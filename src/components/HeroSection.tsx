@@ -106,11 +106,11 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="max-w-3xl"
           >
-            <h1 className="font-heading font-extrabold text-4xl md:text-6xl lg:text-7xl text-primary-foreground leading-[1.1] mb-6">
+            <h1 className="font-heading font-extrabold text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6">
               Where Clean Water{" "}
               <span className="text-accent">Meets Education.</span>
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80 font-body mb-4 max-w-xl leading-relaxed">
+            <p className="text-lg md:text-xl text-white/80 font-body mb-4 max-w-xl leading-relaxed">
               Transforming lives through water, education, and values-driven leadership across Nigeria.
             </p>
 
@@ -125,7 +125,7 @@ export function HeroSection() {
                 className="mb-8"
               >
                 <p className="font-heading font-semibold text-accent text-lg md:text-xl">{slides[current].headline}</p>
-                <p className="text-primary-foreground/60 text-sm font-heading mt-1">{slides[current].caption}</p>
+                <p className="text-white/60 text-sm font-heading mt-1">{slides[current].caption}</p>
               </motion.div>
             </AnimatePresence>
 
@@ -137,7 +137,7 @@ export function HeroSection() {
               ].map((stat) => (
                 <div key={stat.label} className="text-left">
                   <p className="font-heading font-extrabold text-2xl md:text-3xl text-accent">{stat.value}</p>
-                  <p className="text-xs text-primary-foreground/60 font-heading uppercase tracking-wider">{stat.label}</p>
+                  <p className="text-xs text-white/60 font-heading uppercase tracking-wider">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -169,7 +169,7 @@ export function HeroSection() {
             key={i}
             onClick={() => setCurrent(i)}
             className={`h-2.5 rounded-full transition-all ${
-              i === current ? "bg-accent w-8" : "bg-primary-foreground/40 w-2.5"
+              i === current ? "bg-accent w-8" : "bg-white/40 w-2.5"
             }`}
             aria-label={`Go to slide ${i + 1}`}
           />
@@ -177,7 +177,7 @@ export function HeroSection() {
       </div>
 
       {/* Progress bar */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 h-1 bg-primary-foreground/10">
+      <div className="absolute bottom-0 left-0 right-0 z-10 h-1 bg-white/10">
         <motion.div
           key={current}
           initial={{ width: "0%" }}

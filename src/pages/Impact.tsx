@@ -3,7 +3,7 @@ import { StatsSection } from "@/components/StatsSection";
 import { InlineDonationForm } from "@/components/InlineDonationForm";
 import { StrategicTimeline } from "@/components/StrategicTimeline";
 import { motion } from "framer-motion";
-import { Shield, BookOpen, Target, Users, Lightbulb, AlertTriangle, Heart } from "lucide-react";
+import { Shield, BookOpen, Target, Users, Lightbulb, AlertTriangle, Heart, Share2 } from "lucide-react";
 import reportGovernance from "@/assets/report-governance.jpg";
 import reportStrategy from "@/assets/report-strategy-2026.jpg";
 import impactStudentsHall from "@/assets/impact-students-hall.jpg";
@@ -138,7 +138,15 @@ const Impact = () => {
                 <div className="p-6">
                   <span className="inline-block font-heading text-xs uppercase tracking-widest text-secondary font-semibold bg-secondary/10 px-3 py-1 rounded-full mb-3">{story.tag}</span>
                   <h3 className="font-heading font-bold text-lg text-foreground mb-2">{story.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{story.excerpt}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">{story.excerpt}</p>
+                  <a
+                    href={`https://wa.me/?text=${encodeURIComponent(`${story.title}: ${story.excerpt} — Learn more at waterandwisdom.lovable.app/impact`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-heading font-semibold text-secondary hover:text-secondary/80 transition-colors"
+                  >
+                    <Share2 size={14} /> Share on WhatsApp
+                  </a>
                 </div>
               </motion.article>
             ))}

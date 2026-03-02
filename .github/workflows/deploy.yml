@@ -39,7 +39,7 @@ jobs:
       - name: Build project
         env:
           CI: false
-        run: npm run build
+        run: npm run build -- --base=/${{ github.event.repository.name }}/
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4

@@ -19,7 +19,7 @@ const Contact = () => {
     const message = encodeURIComponent(
       `Hi, I'm ${formData.name}${formData.organization ? ` from ${formData.organization}` : ""}. [${formData.type}] ${formData.message}`
     );
-    window.open(`https://wa.me/2348069387354?text=${message}`, "_blank");
+    window.open(`https://wa.me/2348069387357?text=${message}`, "_blank");
   };
 
   return (

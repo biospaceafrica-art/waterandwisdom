@@ -4,6 +4,7 @@ import { PillarsSection } from "@/components/PillarsSection";
 import { StatsSection } from "@/components/StatsSection";
 import { StoryTeaser } from "@/components/StoryTeaser";
 import { VolunteerCarousel } from "@/components/VolunteerCarousel";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { FinalCTA } from "@/components/FinalCTA";
 
 const Index = () => {
@@ -13,6 +14,7 @@ const Index = () => {
       <PillarsSection />
       <StatsSection />
       <StoryTeaser />
+      <TestimonialsSection />
       <VolunteerCarousel />
       <FinalCTA />
     </Layout>

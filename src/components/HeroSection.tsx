@@ -15,10 +15,20 @@ import heroSchoolAerial from "@/assets/hero-school-aerial.jpg";
 import heroValpTeam from "@/assets/hero-valp-team.jpg";
 import heroSchoolSession from "@/assets/hero-school-session.jpg";
 import heroStudentsAdvocacy from "@/assets/hero-students-advocacy.jpg";
+import heroVideoWater from "@/assets/hero-video-water.mp4.asset.json";
 
-const slides = [
+type Slide = {
+  image: string;
+  video?: string;
+  alt: string;
+  headline: string;
+  caption: string;
+};
+
+const slides: Slide[] = [
   {
     image: heroCleanWater,
+    video: heroVideoWater.url,
     alt: "Children celebrating clean water from a new borehole",
     headline: "Clean Water Changes Everything",
     caption: "Providing safe drinking water to rural communities across Nigeria",
@@ -123,18 +133,36 @@ export function HeroSection() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Background images */}
+      {/* Background image or video */}
       <AnimatePresence mode="wait">
-        <motion.img
-          key={current}
-          src={slides[current].image}
-          alt={slides[current].alt}
-          initial={{ opacity: 0, scale: 1.08 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.2 }}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        {slides[current].video ? (
+          <motion.video
+            key={`v-${current}`}
+            src={slides[current].video}
+            poster={slides[current].image}
+            autoPlay
+            muted
+            loop
+            playsInline
+            initial={{ opacity: 0, scale: 1.08 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2 }}
+            className="absolute inset-0 w-full h-full object-cover"
+            aria-label={slides[current].alt}
+          />
+        ) : (
+          <motion.img
+            key={`i-${current}`}
+            src={slides[current].image}
+            alt={slides[current].alt}
+            initial={{ opacity: 0, scale: 1.08 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2 }}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        )}
       </AnimatePresence>
 
       <div className="absolute inset-0 bg-hero-overlay" />
